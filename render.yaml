@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: skyfreelanc-bot
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python bot.py"
+    envVars:
+      - key: BOT_TOKEN
+        fromSecret: bot_token
+      - key: CHANNEL_NAME
+        value: "@skyfreelanc"
